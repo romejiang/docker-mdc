@@ -35,6 +35,7 @@ while true; do
     if [ $FILES -gt 0 ]; then
         echo "Files exist"
         gosu ${USER} /app/Movie_Data_Capture
+        find . -maxdepth 1 -type d -empty -print -delete -o -type f -empty -print -delete
     else
         echo "No files"
     fi
