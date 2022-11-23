@@ -34,6 +34,7 @@ ENV TZ="Asia/Shanghai"
 ENV UID=99
 ENV GID=100
 ENV UMASK=002
+ENV DELAY=60
 
 ADD docker-entrypoint.sh docker-entrypoint.sh
 

@@ -30,4 +30,13 @@ fi
 
 echo "Starting..."
 cd /data
-gosu ${USER} /app/Movie_Data_Capture
+while true; do
+    FILES=$(ls -l . | grep -v -e '^total' -e 'failed' -e 'JAV_output' | wc -l)
+    if [ $FILES -gt 0 ]; then
+        echo "Files exist"
+        gosu ${USER} /app/Movie_Data_Capture
+    else
+        echo "No files"
+    fi
+    sleep ${DELAY}
+done
