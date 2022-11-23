@@ -38,5 +38,6 @@ while true; do
     else
         echo "No files"
     fi
+    echo "sleep for ${DELAY} seconds..."
     sleep ${DELAY}
 done

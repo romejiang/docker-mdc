@@ -150,11 +150,11 @@ docker run --rm -it \
 
 ```sh
 cd docker-mdc
-docker build -t mdc --build-arg MDC_VERSION="6.0.1" ./
+docker build -t romejiang/mdc:6.4.1 --build-arg MDC_SOURCE_VERSION="6.4.1" ./
 
-mkdir test
-dd if=/dev/zero of="./test/MIFD-046.mp4" bs=250MB count=1
-docker run --rm --name mdc_test -it -v ${PWD}/test:/data -e UID=$(stat -c %u test) -e GID=$(stat -c %g test) vergilgao/mdc:latest
+mkdir data
+dd if=/dev/zero of="./data/MIFD-046.mp4" bs=250MB count=1
+docker run --rm --name mdc_test -it -v ${PWD}/data:/data -e UID=$(stat -c %u test) -e GID=$(stat -c %g test) romejiang/mdc:6.4.1
 ```
 
 ## 申明
